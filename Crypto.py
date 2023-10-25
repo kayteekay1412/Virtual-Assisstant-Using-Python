@@ -5,7 +5,7 @@ Created on Sun Mar 28
 @author: ktk
 """
 affirm=["yes","y","Y","Yes"]
-def casear():
+def casearcode():
     def encryptcaesar(code,key):
         result=""
         for i in range(len(code)):
@@ -41,6 +41,7 @@ def casear():
                 continue
             else:
                 break
+    caesar()
 def vigenre():           
     def generateKey(string,key):
     	key=list(key)

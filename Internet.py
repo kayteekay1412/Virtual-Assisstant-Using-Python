@@ -45,16 +45,17 @@ def otp():
                 break
 def wikisearch():
     speak("What do you want to search on wikipedia?")
-    while True:
-        try:
-            com=hear()
-            break
-        except:
-            speak("Sorry I didn't catch that")
-    query=com.lower()
+    query=input("Enter your query below:\n")
+    # while True:
+    #     try:
+    #         com=hear()
+    #         break
+    #     except:
+    #         speak("Sorry I didn't catch that")
+    # query=com.lower()
     speak('Searching Wikipedia...')
     try:
-        results = wikipedia.summary(query, sentences=2)
+        results = wikipedia.summary(query, sentences=3)
         speak("According to Wikipedia")
         sub(results)
     except:
