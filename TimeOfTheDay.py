@@ -26,11 +26,10 @@ def goodbye(name):
     if a>=7 and a<16:
         g="Hope you have a good day!! "+str(name)
     else:
-        g='''Goodnight buddy!!
-        Sweet dreams '''+str(name)
+        g='''Goodnight buddy!!'''+str(name)
     return(g)
 def now():
-    sub("The time now is",current_time)
+    sub(f"The time currently is {current_time}.")
 def stopwatch():
     starttime=t.time()
     lasttime=starttime
@@ -53,13 +52,16 @@ def stopwatch():
         print("*"*20)
         sub("Done")
 def timer():
-    ch=int(input("Do you want a\n1)Simple Timer\n2)Timer 2.0: "))
+    speak("Which timer do you want to use?")
+    ch=int(input("Do you want a\n1)Simple Timer\n2)Timer 2.0:\nOption: "))
     if ch==1:
         def countdown(t2):
+            mins, secs = divmod(t2, 60)
+            speak(f"Timer has been set for {mins} minutes and {secs} seconds.")
             while t2:
                 mins, secs = divmod(t2, 60)
                 timer = '{:02d}:{:02d}'.format(mins, secs)
-                sub(timer)
+                print(timer)
                 t.sleep(1)
                 t2 -= 1
             sub('Fire in the hole!!')

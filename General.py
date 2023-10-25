@@ -170,7 +170,7 @@ def grocerylist():
     			q = input("Enter quantity : ")
     			speak(f"Enter price of {pn} below")
     			p = float(input("Enter price of the product : "))
-    			if p>s:
+    			if p*q>s:
     				sub("\nCAN'T BUY THE PRODUCT")
     				continue
     			else:
@@ -199,10 +199,11 @@ def grocerylist():
     for i in range(len(na)):
     	sub(f"{na[i]} {qu[i]} {pr[i]}")
 def calender():
-    speak("Please Enter the year Number below")
-    year = int(input("Please Enter the year Number: "))
-    speak("Please Enter the month Number below")
-    month = int(input("Please Enter the month Number: "))
+    speak("Please Enter the year below")
+    year = int(input("Please Enter the year: "))
+    speak("Please Enter the month in numbers below")
+    month = int(input("Please Enter the month: "))
+    print()
     print(calendar.month(year, month))
 def desktopreminder():
     toaster = ToastNotifier()
